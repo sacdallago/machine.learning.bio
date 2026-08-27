@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>machine.learning.bio — the Dallago lab at Duke University</title>
+<meta name="description" content="We build AI that reads, writes, and searches the language of biology. The Dallago lab at Duke University works on protein language models, de novo binder design, proteome-scale search, and honest evaluation.">
+<link rel="canonical" href="https://machine.learning.bio/">
+<link rel="preload" href="/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machine.learning.bio/">
+<meta property="og:title" content="machine.learning.bio — the Dallago lab at Duke University">
+<meta property="og:description" content="We build AI that reads, writes, and searches the language of biology.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Christian Dallago",
+  "givenName": "Christian",
+  "familyName": "Dallago",
+  "jobTitle": "Visiting Assistant Professor",
+  "url": "https://machine.learning.bio/",
+  "email": "lab@learning.bio",
+  "affiliation": [
+    { "@type": "Organization", "name": "Duke University" },
+    { "@type": "Organization", "name": "NVIDIA" }
+  ],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Technical University of Munich" },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=4q0fNGAAAAAJ",
+    "https://github.com/sacdallago",
+    "https://bsky.app/profile/machine.learning.bio",
+    "https://linkedin.com/in/sacdallago",
+    "https://christian.dallago.us"
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <h1>We build AI that reads, writes, and searches the language of biology.</h1>
+    <p>The Dallago lab at Duke University.</p>
+  </div>
+
+  <section aria-labelledby="thesis">
+    <h2 id="thesis">What we do</h2>
+    <p class="lead">We ask what machine-learned representations can reveal about biology — and where they fail — then use those answers to build more reliable tools for discovery and protein engineering.</p>
+    <p>Our work spans scalable biological inference, rigorous evaluation of predictive models, and generative design of proteins and molecular interactions. We pair large-scale computation with careful benchmarking and experimental collaboration to identify what models can reliably tell us about biology.</p>
+  </section>
+
+  <section aria-labelledby="themes">
+    <h2 id="themes">Research</h2>
+
+    <div class="entry">
+      <h3><a href="/research/#representation-learning">Representation learning for biology</a></h3>
+      <p class="gloss">Teaching models to read proteins and genomes as languages.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#generative-design">Generative and programmable design</a></h3>
+      <p class="gloss">Writing new proteins, atom by atom, and testing them at the bench.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#search-and-scale">Search and structure at scale</a></h3>
+      <p class="gloss">Making biological search and structure prediction fast enough for whole proteomes.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#evaluation">Benchmarks and honest evaluation</a></h3>
+      <p class="gloss">Measuring whether these models actually work where it matters.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="selected">
+    <h2 id="selected">Selected work</h2>
+
+    <div class="entry">
+      <p class="tag">Preprint 2026 &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.03.27.714458">AlphaFold Database expands to proteome-scale quaternary structures</a></h3>
+      <p>Most proteins do not work alone, but the world's structure database showed them alone. We predicted 31 million candidate complexes across 4,777 proteomes, established confidence criteria against experimentally determined structures, and released 1.81 million high-confidence predictions. 31.3% of them extend beyond anything detectable in the PDB.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">ICLR 2026 Oral &middot; NVIDIA</p>
+      <h3><a href="https://arxiv.org/abs/2603.27950">Proteina-Complexa</a></h3>
+      <p>Binder design has been split between conditional generation and hallucination. We argue that is a false dichotomy, and built one fully atomistic model that does both — then showed it keeps improving when you let it think longer at inference time.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">Nature Methods 2025 &middot; NVIDIA</p>
+      <h3><a href="https://doi.org/10.1038/s41592-025-02819-8">GPU-accelerated homology search with MMseqs2</a></h3>
+      <p>The bottleneck in structure prediction was never only the network — it was the search in front of it. Redesigning the core alignment algorithms for GPUs reached roughly 100 trillion cell updates per second, and kept it working on low-wattage cards so the speed-up is not reserved for people with a cluster.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">ICML 2026 Oral &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.02.23.707496">FLIP2</a></h3>
+      <p>Seven new fitness datasets and splits built to mirror real protein-engineering campaigns rather than random train/test partitions. Across them, simpler models often matched or beat fine-tuned protein language models — a result worth publishing precisely because it is inconvenient.</p>
+    </div>
+
+    <p class="note mt"><a href="/publications/">All publications</a></p>
+  </section>
+
+  <section aria-labelledby="news">
+    <h2 id="news">News</h2>
+    <dl class="news">
+      <dt><time datetime="2026-07-09">9 July 2026</time></dt>
+      <dd>An updated preprint of <a href="https://doi.org/10.64898/2026.03.27.714458">the AlphaFold Database quaternary expansion</a> is posted. The manuscript is under review.</dd>
+
+      <dt><time datetime="2026-05-29">29 May 2026</time></dt>
+      <dd>FLIP2 is accepted as an <strong>Oral</strong> at ICML 2026 — one of 168 orals.</dd>
+
+      <dt><time datetime="2026-03-30">30 March 2026</time></dt>
+      <dd><a href="https://arxiv.org/abs/2603.27950">Proteina-Complexa</a> is posted, and accepted as an <strong>Oral</strong> at ICLR 2026.</dd>
+    </dl>
+    <p class="note mt"><a href="/news/">News archive</a></p>
+  </section>
+
+  <section aria-labelledby="dualdoor">
+    <h2 id="dualdoor">Two roles, two doors</h2>
+    <p>Chris is a Senior Research Scientist and Applied Research Team Lead in Digital Biology at <strong>NVIDIA</strong>, and a Visiting Assistant Professor at <strong>Duke University</strong>, where he leads this lab. Work described here spans both, and every publication is tagged with the affiliation it was carried out under.</p>
+    <p><strong>The Duke lab is independent of NVIDIA.</strong> Joining the Duke group does not imply employment at, or access to the resources of, NVIDIA. For NVIDIA roles, see the <a href="https://www.nvidia.com/en-us/about-nvidia/careers/">NVIDIA careers page</a>; for the Duke lab, see <a href="/join/">Join</a>.</p>
+  </section>
+
+  <section aria-labelledby="join">
+    <h2 id="join">Join us</h2>
+    <p>We supervise Duke students, and collaborate with people elsewhere through jointly-supervised theses and fellowships. The constraints are stated plainly on the <a href="/join/">Join</a> page, up front, before anything else.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p><a href="/team/">Team</a> &middot; <a href="/join/">Join</a> &middot; <a href="/data/">Data for talks</a> &middot; <a href="https://bsky.app/profile/machine.learning.bio">Bluesky</a> &middot; <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a> &middot; <a href="https://github.com/sacdallago">GitHub</a></p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — machine.learning.bio</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/style.css">
+<script>
+/* GitHub Pages has no server-side redirects, so legacy URLs are mapped here.
+   Anything unmatched falls through to the page below. */
+(function () {
+  var map = {
+    "/home": "/",
+    "/index": "/",
+    "/projects": "/research/",
+    "/project": "/research/",
+    "/publication": "/publications/",
+    "/papers": "/publications/",
+    "/software": "/research/#software",
+    "/models": "/research/#software",
+    "/people": "/team/",
+    "/members": "/team/",
+    "/contact": "/join/#contact",
+    "/opportunities": "/join/",
+    "/msca": "/news/msca/"
+  };
+  var p = location.pathname.toLowerCase().replace(/\.html$/, "").replace(/\/+$/, "");
+  if (map[p]) location.replace(map[p] + location.hash);
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <h1>That page isn't here.</h1>
+    <p>It may have moved when the site was rebuilt.</p>
+  </div>
+
+  <section aria-labelledby="where">
+    <h2 id="where">Where things live now</h2>
+    <ul class="plain">
+      <li><a href="/research/">Research</a> — the four themes, and the software and data we release.</li>
+      <li><a href="/publications/">Publications</a> — everything from 2019 onward.</li>
+      <li><a href="/team/">Team</a> — members, collaborators, alumni.</li>
+      <li><a href="/join/">Join</a> — open problems, constraints, and what to send.</li>
+      <li><a href="/news/">News</a> — including the <a href="/news/msca/">MSCA fellowship posting</a>.</li>
+      <li><a href="/data/">Data for talks</a> — bios and portraits for organisers.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+</body>
+</html>

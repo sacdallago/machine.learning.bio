@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — machine.learning.bio</title>
+<meta name="description" content="Four themes: representation learning for biology, generative and programmable design, search and structure at scale, and benchmarks and honest evaluation.">
+<link rel="canonical" href="https://machine.learning.bio/research/">
+<link rel="preload" href="/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machine.learning.bio/research/">
+<meta property="og:title" content="Research — machine.learning.bio">
+<meta property="og:description" content="Representation learning, generative design, search at scale, and honest evaluation.">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/" aria-current="page">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <h1>Research</h1>
+
+  <p class="lead">We ask what machine-learned representations can reveal about biology — and where they fail — then use those answers to build more reliable tools for discovery and protein engineering. By doing so, we develop quantitative and machine-learning methods to understand, evaluate, and engineer biology.</p>
+
+  <p>Four themes. The same four are used as filters on the <a href="/publications/">publications</a> page.</p>
+
+  <hr class="rule">
+
+  <section id="representation-learning" aria-labelledby="h-repr">
+    <p class="label">Theme 01</p>
+    <h2 id="h-repr">Representation learning for biology</h2>
+    <p class="lead">Teaching models to read proteins and genomes as languages.</p>
+
+    <p>In <strong>ProtTrans</strong>, we trained large AI models to read protein sequences like a language, similar to how modern AI reads human text. These models learned fundamental principles about how proteins work without being explicitly taught biology, chemistry or physics. Most remarkably, our best model (ProtT5) outperformed the methods available at the time at predicting protein properties, while being dramatically faster.</p>
+
+    <p>We contributed <strong>Nucleotide Transformer</strong>, a deep learning system that learned multiple genomes from humans and other species. It learned the language of DNA by unmasking millions of genetic sequences. Through this process, it discovered patterns in DNA that control how genes work, where genes begin and end, and how DNA variations might affect human health.</p>
+
+    <p><strong>PredictProtein</strong> has been making protein analysis accessible to scientists worldwide since 1992, predicting structure and function from an amino acid sequence. We contributed the update that added protein language model predictions — the first significant departure from explicit use of evolutionary information.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.1109/TPAMI.2021.3095381">ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning</a> <span class="tag">IEEE TPAMI 2022</span></li>
+      <li><a href="https://doi.org/10.1186/s12859-019-3220-8">Modeling aspects of the language of life through transfer-learning protein sequences</a> (SeqVec) <span class="tag">BMC Bioinformatics 2019</span></li>
+      <li><a href="https://doi.org/10.1038/s41592-024-02523-z">Nucleotide Transformer: building and evaluating robust foundation models for human genomics</a> <span class="tag">Nature Methods 2025</span></li>
+      <li><a href="https://doi.org/10.1002/cpz1.113">Learned embeddings from deep learning to visualize and predict protein sets</a> (bio_embeddings) <span class="tag">Current Protocols 2021</span></li>
+      <li><a href="https://doi.org/10.1093/bioadv/vbab035">Light attention predicts protein location from the language of life</a> <span class="tag">Bioinformatics Advances 2021</span></li>
+      <li><a href="https://doi.org/10.1093/nar/gkab354">PredictProtein — Predicting Protein Structure and Function for 29 Years</a> <span class="tag">Nucleic Acids Research 2021</span></li>
+      <li><a href="https://doi.org/10.1177/10943420231201154">GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics</a> <span class="tag">IJHPCA 2023</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="generative-design" aria-labelledby="h-gen">
+    <p class="label">Theme 02</p>
+    <h2 id="h-gen">Generative and programmable design</h2>
+    <p class="lead">Writing new proteins, atom by atom, and testing them at the bench.</p>
+
+    <p>We develop generative methods for atomistic protein and binder design, and study how pretraining, inference-time optimisation, and experimental evaluation can improve specificity and usable hit rates.</p>
+
+    <p>The line runs through three models. <strong>Proteina</strong> generates protein backbones, using hierarchical fold-class conditioning and a scaled transformer to produce designable structures up to 800 residues. <strong>La-Proteina</strong> makes them fully atomistic, modelling coarse backbone explicitly while capturing sequence and side-chain detail in per-residue latents — which sidesteps the awkward problem of side chains that change length during generation. <strong>Proteina-Complexa</strong> conditions all of that on a target.</p>
+
+    <p>Binder design has generally been cast as either conditional generation or sequence optimisation against a structure predictor — hallucination. We argue that is a false dichotomy. Proteina-Complexa unifies both, pretrains on <strong>Teddymer</strong>, a large synthetic dataset of binder–target pairs built from domain–domain interactions in predicted monomeric structures, and then optimises at inference time. It extends to small-molecule targets and enzyme design as well.</p>
+
+    <p>Designs from this work are being validated experimentally with collaborators at Duke and elsewhere. Those results are not published yet, and we will link them here when they are.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://arxiv.org/abs/2603.27950">Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute</a> (Proteina-Complexa) <span class="tag">ICLR 2026 Oral</span></li>
+      <li><a href="https://arxiv.org/abs/2507.09466">La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching</a> <span class="tag">Preprint 2025</span></li>
+      <li><a href="https://arxiv.org/abs/2503.00710">Proteina: Scaling Flow-based Protein Structure Generative Models</a> <span class="tag">ICLR 2025 Oral</span></li>
+      <li><a href="https://arxiv.org/abs/2512.01976">Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design</a> <span class="tag">Preprint 2025</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="search-and-scale" aria-labelledby="h-scale">
+    <p class="label">Theme 03</p>
+    <h2 id="h-scale">Search and structure at scale</h2>
+    <p class="lead">Making biological search and structure prediction fast enough for whole proteomes.</p>
+
+    <p>We tackled a computational bottleneck in protein sequence comparison by redesigning the core algorithms to use modern GPU architectures. With our collaborators we proposed GPU-optimised algorithms for both gapless sequence filtering and gapped alignment using protein profiles, reaching speeds up to 100 trillion cell updates per second. Beyond raw performance, we focused on making these search capabilities work even on low-wattage GPUs, so the speed-up is not reserved for people who own a cluster.</p>
+
+    <p>That matters because homology search sits in front of nearly every structure predictor. Making it cheap changes what is affordable downstream.</p>
+
+    <p>Which is what the second strand does. We build and analyse large-scale predictions of protein complexes to extend structural biology beyond individual chains — interaction interfaces, complex-dependent folds, and conserved structural patterns across the tree of life. We predicted 31 million candidate homo- and heterodimeric complexes across 4,777 proteomes, including model organisms and organisms of global health concern, and established confidence criteria by analysing experimentally determined structures. That yielded 1.81 million high-confidence predictions.</p>
+
+    <p>Two findings from that set are worth stating plainly: the top 1% of structural clusters account for roughly 44% of all complexes, and roughly 8.3% of clusters are conserved across multiple domains of life — pointing to a substantial fraction of ancient, universally retained assemblies. Meanwhile 31.3% of high-confidence predictions extend beyond detectable PDB coverage.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.1038/s41592-025-02819-8">GPU-accelerated homology search with MMseqs2</a> <span class="tag">Nature Methods 2025</span></li>
+      <li><a href="https://doi.org/10.64898/2026.03.27.714458">AlphaFold Database expands to proteome-scale quaternary structures</a> <span class="tag">Preprint 2026</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="evaluation" aria-labelledby="h-eval">
+    <p class="label">Theme 04</p>
+    <h2 id="h-eval">Benchmarks and honest evaluation</h2>
+    <p class="lead">Measuring whether these models actually work where it matters.</p>
+
+    <p>We develop benchmarks that test whether fitness-prediction models generalise under the distribution shifts that arise in real protein-engineering campaigns — not merely on random train/test splits.</p>
+
+    <p><strong>FLIP</strong> established the protocols, but was limited to thermostability, binding, and viral capsid viability. <strong>FLIP2</strong> adds seven datasets spanning enzymes, protein–protein interactions, and light-sensitive proteins, together with splits that mirror the situations engineers actually face.</p>
+
+    <p>The headline result is uncomfortable and we publish it anyway: across these datasets and splits, simpler models often matched or outperformed fine-tuned protein language models, which challenges the utility of existing transfer-learning techniques. Provenance is recorded for every dataset and all data is redistributed CC-BY 4.0.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.64898/2026.02.23.707496">FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications</a> <span class="tag">ICML 2026 Oral</span></li>
+      <li><a href="https://openreview.net/forum?id=p2dMLEwL8tF">FLIP: Benchmark tasks in fitness landscape inference for proteins</a> <span class="tag">NeurIPS 2021 D&amp;B</span></li>
+      <li><a href="https://doi.org/10.1038/s41557-023-01218-w">Illuminating enzyme design using deep learning</a> <span class="tag">Nature Chemistry 2023</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="h-software">
+    <h2 id="h-software">Software and data</h2>
+    <p>Papers are the evidence; the artifacts are the product. Everything below is open, and star counts were checked against GitHub in July 2026.</p>
+    <ul class="plain">
+      <li><a href="https://github.com/soedinglab/MMseqs2">MMseqs2</a> — fast sequence and structure search, with the GPU implementation. 2,111 stars. <a href="https://mmseqs.com">mmseqs.com</a></li>
+      <li><a href="https://github.com/sacdallago/bio_embeddings">bio_embeddings</a> — compute and visualise protein embeddings. 508 stars.</li>
+      <li><a href="https://github.com/NVIDIA-BioNeMo/Proteina-Complexa">Proteina-Complexa</a> — 398 stars &middot; <a href="https://github.com/NVIDIA-BioNeMo/la-proteina">La-Proteina</a> — 304 stars &middot; <a href="https://github.com/NVIDIA-BioNeMo/proteina">Proteina</a> — 271 stars.</li>
+      <li><a href="https://github.com/J-SNACKKB/FLIP">FLIP</a> — 135 stars. <a href="https://flip.protein.properties/">flip.protein.properties</a></li>
+      <li><a href="https://github.com/sacdallago/biotrainer">biotrainer</a> — training protein prediction models without writing training loops. 52 stars.</li>
+      <li><a href="https://github.com/agemagician/ProtTrans">ProtTrans</a> — 1,317 stars &middot; <a href="https://github.com/instadeepai/nucleotide-transformer">Nucleotide Transformer</a> — 901 stars &middot; <a href="https://github.com/Rostlab/SeqVec">SeqVec</a> — 123 stars.</li>
+      <li><a href="https://alphafold.ebi.ac.uk">AlphaFold Database</a> — high-confidence complex predictions, with the full set on the <a href="https://ftp.ebi.ac.uk/pub/databases/alphafold/collaborations/nvda/">EMBL-EBI FTP</a>.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p><a href="/team/">Team</a> &middot; <a href="/join/">Join</a> &middot; <a href="/data/">Data for talks</a> &middot; <a href="https://bsky.app/profile/machine.learning.bio">Bluesky</a> &middot; <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a> &middot; <a href="https://github.com/sacdallago">GitHub</a></p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+</body>
+</html>

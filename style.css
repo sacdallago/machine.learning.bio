@@ -1,0 +1,531 @@
+/* machine.learning.bio
+   One stylesheet. No framework, no build step.
+   Warm paper, near-black ink, one muted accent. Type does the work. */
+
+/* ---------------------------------------------------------------- fonts */
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/instrumentserif-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-600.woff2") format("woff2");
+}
+
+/* --------------------------------------------------------------- tokens */
+
+:root {
+  --paper: #faf8f4;
+  --ink: #1a1815;
+  --muted: #6b655c;
+  --accent: #3d6b63;
+  --rule: #ddd8ce;
+
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --measure: 68ch;
+  --column: 44rem; /* 704px */
+
+  --step-0: 1.125rem; /* 18px  body            */
+  --step-1: 1.25rem; /*  20px small headings  */
+  --step-2: 1.75rem; /*  28px h2              */
+  --step-3: 2.2rem; /*   35px h1              */
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 2rem;
+  --space-l: 4rem;
+  --space-xl: 7rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14130f;
+    --ink: #ede9e1;
+    --muted: #9c958a;
+    --accent: #8fbdaf;
+    --rule: #33302a;
+  }
+}
+
+/* --------------------------------------------------------------- base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0 1.5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One centred column. Nothing wider, ever. */
+header,
+main,
+footer {
+  max-width: var(--column);
+  margin-inline: auto;
+}
+
+main {
+  padding-bottom: var(--space-xl);
+}
+
+p,
+li,
+dd,
+blockquote {
+  max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------- links */
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+/* The single permitted motion on the site. */
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    transition: text-decoration-thickness 120ms ease;
+  }
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1.5rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+
+/* ------------------------------------------------------------ headings */
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  margin: 0 0 var(--space-s);
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+h2 {
+  font-size: var(--step-2);
+}
+h3 {
+  font-size: var(--step-1);
+  line-height: 1.3;
+}
+
+h2 {
+  margin-top: var(--space-l);
+}
+h3 {
+  margin-top: var(--space-m);
+}
+
+/* Quiet sans label above a block. */
+.label {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 var(--space-s);
+}
+
+/* --------------------------------------------------- masthead & footer */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-m);
+  padding: var(--space-m) 0 var(--space-s);
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.masthead nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+.masthead nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.masthead nav a:hover,
+.masthead nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: var(--space-m) 0 var(--space-l);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+footer p {
+  margin: 0 0 var(--space-xs);
+}
+footer a {
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.hero {
+  padding: var(--space-xl) 0 var(--space-l);
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 2.9rem);
+  line-height: 1.1;
+  margin: 0 0 var(--space-m);
+  max-width: 20ch;
+}
+
+.hero p {
+  font-size: var(--step-1);
+  color: var(--muted);
+  margin: 0;
+}
+
+/* -------------------------------------------------------------- blocks */
+
+section {
+  padding-top: var(--space-l);
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--space-l) 0 0;
+}
+
+.lead {
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Boxless "card": a hairline above, text below. Never a box. */
+.entry {
+  padding-top: var(--space-m);
+  margin-top: var(--space-m);
+  border-top: 1px solid var(--rule);
+}
+.entry:first-of-type {
+  margin-top: var(--space-s);
+}
+.entry h3 {
+  margin-top: 0;
+}
+.entry p {
+  margin: 0 0 var(--space-xs);
+}
+
+/* Plain-language one-liner under a title. */
+.gloss {
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------- lists */
+
+.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plain > li + li {
+  margin-top: var(--space-m);
+}
+
+/* Publications, grouped by year. */
+.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pubs > li {
+  padding: var(--space-m) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.pubs .title {
+  display: block;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.3;
+  margin-bottom: var(--space-xs);
+}
+
+.authors {
+  margin: 0 0 var(--space-xs);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.authors strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.venue {
+  margin: 0 0 var(--space-xs);
+  font-size: 0.9375rem;
+}
+
+/* Artifact links, separated by hairline pipes rather than pills. */
+.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-s);
+}
+.links li + li {
+  border-left: 1px solid var(--rule);
+  padding-left: var(--space-s);
+}
+
+/* Affiliation / venue tag: letterspaced caps, no pill, no colour fill. */
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------- people & defs */
+
+dl.people {
+  margin: 0;
+}
+dl.people dt {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.3;
+  margin-top: var(--space-m);
+}
+dl.people dd {
+  margin: var(--space-xs) 0 0;
+  color: var(--muted);
+}
+dl.people dd a {
+  color: var(--accent);
+}
+
+/* News: date, then one line. */
+dl.news {
+  margin: 0;
+}
+dl.news dt {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: var(--space-m);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--rule);
+}
+dl.news dd {
+  margin: var(--space-xs) 0 0;
+}
+
+/* ------------------------------------------------------------- filters */
+
+/* Rendered only when filter.js runs; the list works fine without it. */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-s);
+  margin: var(--space-m) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.filters button {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 0 0 2px;
+  cursor: pointer;
+}
+.filters button:hover {
+  color: var(--ink);
+}
+.filters button[aria-pressed="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Two spacing utilities, so no rule ever needs to live in a style attribute. */
+.mt {
+  margin-top: var(--space-m);
+}
+.mt0 {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------- misc */
+
+blockquote {
+  margin: var(--space-m) 0;
+  padding-left: var(--space-s);
+  border-left: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+address {
+  font-style: normal;
+  color: var(--muted);
+}
+
+abbr {
+  text-decoration: none;
+}
+
+ul.bullets,
+ol.numbers {
+  padding-left: 1.2em;
+}
+ul.bullets li,
+ol.numbers li {
+  margin-bottom: var(--space-xs);
+}
+
+/* --------------------------------------------------------------- small */
+
+@media (max-width: 32rem) {
+  body {
+    padding: 0 1.125rem;
+  }
+  :root {
+    --space-xl: 4.5rem;
+    --space-l: 3rem;
+  }
+  .masthead {
+    display: block;
+  }
+  .masthead nav ul {
+    margin-top: var(--space-xs);
+  }
+}
+
+/* --------------------------------------------------------------- print */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --ink: #000;
+    --muted: #444;
+    --accent: #000;
+    --rule: #bbb;
+  }
+  .masthead nav,
+  .filters,
+  .skip {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}

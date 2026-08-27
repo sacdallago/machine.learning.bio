@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — machine.learning.bio</title>
+<meta name="description" content="Publications from the Dallago lab and Chris Dallago's work at NVIDIA and Duke University, grouped by year and filterable by research theme.">
+<link rel="canonical" href="https://machine.learning.bio/publications/">
+<link rel="preload" href="/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machine.learning.bio/publications/">
+<meta property="og:title" content="Publications — machine.learning.bio">
+<meta property="og:description" content="Grouped by year, filterable by research theme.">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/publications/" aria-current="page">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <h1>Publications</h1>
+
+  <p class="lead">Work from 2019 onward. Earlier work is on <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a>.</p>
+
+  <p class="note">Lab members and Chris are set in <strong>bold</strong>. Each entry carries the affiliation the work was carried out under — <span class="tag">NVIDIA</span>, <span class="tag">Duke</span>, or <span class="tag">NVIDIA + Duke</span> — and links to whatever exists: paper, code, weights, data, project page.</p>
+
+  <div id="filters" hidden></div>
+
+  <h2>2026</h2>
+  <ul class="pubs">
+
+    <li data-theme="scale">
+      <a class="title" href="https://doi.org/10.64898/2026.03.27.714458">AlphaFold Database expands to proteome-scale quaternary structures</a>
+      <p class="authors">Yewon Han, Maxim I. Tsenkov, Nicola A. E. Venanzi, Sooyoung Cha, Neel Patel, Sreenath Nair, Rayan Abbara, Damian Bertoni, Alejandro Chacon, Nikolas Dietrich, Boris Fomitchev, Yonathan Goldtzvik, Darren Hsu, Jennifer Austin, Joseph Ellaway, Kieran Didi, Gyuri Kim, Hyunbin Kim, Oleg Kovalevskiy, Danny Lasecki, Adam Laydon, Micha Livne, Pedro Magana, Maciej Majewski, Urmila Paramval, Risha Patel, Ivanna Pidruchna, Bruno Santini Lopez, Preeti Sohani, Ahmed Tanweer, Danh Tran, Kyle Tretina, Melanie Vollmar, Quan Vu, Augustin Zidek, Sameer Velankar, Martin Steinegger, Jennifer Fleming, Milot Mirdita, <strong>Christian Dallago</strong></p>
+      <p class="venue">bioRxiv preprint, 2026 &middot; under review &middot; <span class="tag">NVIDIA + Duke</span></p>
+      <p class="gloss">31 million candidate complexes across 4,777 proteomes; 1.81 million high-confidence predictions released. Chris is corresponding author.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.64898/2026.03.27.714458">preprint</a></li>
+        <li><a href="https://alphafold.ebi.ac.uk">database</a></li>
+        <li><a href="https://ftp.ebi.ac.uk/pub/databases/alphafold/collaborations/nvda/">data</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="eval">
+      <a class="title" href="https://doi.org/10.64898/2026.02.23.707496">FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications</a>
+      <p class="authors">Kieran Didi, Sarah Alamdari, Amy X. Lu, Bruce Wittmann, Kadina E. Johnston, Ava P. Amini, Ali Madani, Maya Czeneszew, <strong>Christian Dallago</strong>, Kevin K. Yang</p>
+      <p class="venue">ICML 2026 &middot; <strong>Oral</strong> &middot; <span class="tag">NVIDIA + Duke</span></p>
+      <p class="gloss">Seven new datasets and splits that mirror real engineering campaigns. Simpler models often matched or beat fine-tuned protein language models.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.64898/2026.02.23.707496">preprint</a></li>
+        <li><a href="https://github.com/J-SNACKKB/FLIP">code</a></li>
+        <li><a href="https://flip.protein.properties/">project</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="gen">
+      <a class="title" href="https://arxiv.org/abs/2603.27950">Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute</a>
+      <p class="authors">Kieran Didi, Zuobai Zhang, Guoqing Zhou, Danny Reidenbach, Zhonglin Cao, Sooyoung Cha, Tomas Geffner, <strong>Christian Dallago</strong>, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis</p>
+      <p class="venue">ICLR 2026 &middot; <strong>Oral</strong> &middot; <span class="tag">NVIDIA</span></p>
+      <p class="gloss">Proteina-Complexa. One fully atomistic model that unifies conditional generation and hallucination, and keeps improving with test-time compute.</p>
+      <ul class="links">
+        <li><a href="https://arxiv.org/abs/2603.27950">preprint</a></li>
+        <li><a href="https://openreview.net/forum?id=qmCpJtFZra">OpenReview</a></li>
+        <li><a href="https://github.com/NVIDIA-BioNeMo/Proteina-Complexa">code</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <h2>2025</h2>
+  <ul class="pubs">
+
+    <li data-theme="scale">
+      <a class="title" href="https://doi.org/10.1038/s41592-025-02819-8">GPU-accelerated homology search with MMseqs2</a>
+      <p class="authors">Felix Kallenborn, Alejandro Chacon, Christian Hundt, Hassan Sirelkhatim, Kieran Didi, Sooyoung Cha, <strong>Christian Dallago</strong>, Milot Mirdita, Bertil Schmidt, Martin Steinegger</p>
+      <p class="venue">Nature Methods 22(10):2024–2027, 2025 &middot; <span class="tag">NVIDIA</span></p>
+      <p class="gloss">Roughly 100 trillion cell updates per second, and it still runs on low-wattage GPUs.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1038/s41592-025-02819-8">journal</a></li>
+        <li><a href="https://github.com/soedinglab/MMseqs2">code</a></li>
+        <li><a href="https://mmseqs.com">project</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1038/s41592-024-02523-z">Nucleotide Transformer: building and evaluating robust foundation models for human genomics</a>
+      <p class="authors">Hugo Dalla-Torre, Liam Gonzalez, Javier Mendoza-Revilla, Nicolas Lopez Carranza, Adam Henryk Grzywaczewski, Francesco Oteri, <strong>Christian Dallago</strong>, Evan Trop, Bernardo P. de Almeida, Hassan Sirelkhatim, Guillaume Richard, Marcin Skwark, Karim Beguir, Marie Lopez, Thomas Pierrot</p>
+      <p class="venue">Nature Methods 22(2):287–297, 2025 &middot; <span class="tag">NVIDIA</span></p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1038/s41592-024-02523-z">journal</a></li>
+        <li><a href="https://github.com/instadeepai/nucleotide-transformer">code</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr eval">
+      <a class="title" href="https://doi.org/10.1101/cshperspect.a041877">Machine Learning for Protein Science and Engineering</a>
+      <p class="authors">Peter K. Koo, <strong>Christian Dallago</strong>, Ananthan Nambiar, Kevin K. Yang</p>
+      <p class="venue">Cold Spring Harbor Perspectives in Biology, a041877, 2025 &middot; review</p>
+      <p class="gloss">Chris co-edited the Cold Spring Harbor volume this appears in.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1101/cshperspect.a041877">journal</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="gen">
+      <a class="title" href="https://arxiv.org/abs/2512.01976">Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design</a>
+      <p class="authors">Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Kieran Didi, Tomas Geffner, Guoqing Zhou, Jian Tang, <strong>Christian Dallago</strong>, Arash Vahdat, Emine Kucukbenli, Karsten Kreis</p>
+      <p class="venue">arXiv preprint, 2025 &middot; <span class="tag">NVIDIA</span></p>
+      <p class="gloss">Better training data, not a bigger model: +54% structural diversity and +27% co-designability for La-Proteina.</p>
+      <ul class="links">
+        <li><a href="https://arxiv.org/abs/2512.01976">preprint</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="gen">
+      <a class="title" href="https://arxiv.org/abs/2507.09466">La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching</a>
+      <p class="authors">Tomas Geffner, Kieran Didi, Zhonglin Cao, Danny Reidenbach, Zuobai Zhang, <strong>Christian Dallago</strong>, Emine Kucukbenli, Karsten Kreis, Arash Vahdat</p>
+      <p class="venue">arXiv preprint, 2025 &middot; <span class="tag">NVIDIA</span></p>
+      <p class="gloss">Co-designable proteins up to 800 residues, a length at which most baselines stop producing valid samples.</p>
+      <ul class="links">
+        <li><a href="https://arxiv.org/abs/2507.09466">preprint</a></li>
+        <li><a href="https://github.com/NVIDIA-BioNeMo/la-proteina">code</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="gen">
+      <a class="title" href="https://arxiv.org/abs/2503.00710">Proteina: Scaling Flow-based Protein Structure Generative Models</a>
+      <p class="authors">Tomas Geffner, Kieran Didi, Zuobai Zhang, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, <strong>Christian Dallago</strong>, Emine Kucukbenli, Arash Vahdat, Karsten Kreis</p>
+      <p class="venue">ICLR 2025 &middot; <strong>Oral</strong> &middot; <span class="tag">NVIDIA</span></p>
+      <ul class="links">
+        <li><a href="https://arxiv.org/abs/2503.00710">preprint</a></li>
+        <li><a href="https://github.com/NVIDIA-BioNeMo/proteina">code</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <h2>2023</h2>
+  <ul class="pubs">
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1177/10943420231201154">GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics</a>
+      <p class="authors">Maxim Zvyagin, Alexander Brace, Kyle Hippe, Yuntian Deng, Bin Zhang, Cindy Orozco Bohorquez, Austin Clyde, Bharat Kale, Danilo Perez-Rivera, Heng Ma, Carla M. Mann, Michael Irvin, Defne G. Ozgulbas, Natalia Vassilieva, James Gregory Pauloski, Logan Ward, Valerie Hayot-Sasson, Murali Emani, Sam Foreman, Zhen Xie, Diangen Lin, Maulik Shukla, Weili Nie, Josh Romero, <strong>Christian Dallago</strong>, Arash Vahdat, Chaowei Xiao, Thomas Gibbs, Ian Foster, James J. Davis, Michael E. Papka, Thomas Brettin, Rick Stevens, Anima Anandkumar, Venkatram Vishwanath, Arvind Ramanathan</p>
+      <p class="venue">International Journal of High Performance Computing Applications 37(6):683–705, 2023</p>
+      <p class="gloss">ACM Gordon Bell Special Prize for COVID-19 Research, 2022.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1177/10943420231201154">journal</a></li>
+        <li><a href="https://www.acm.org/media-center/2022/november/gordon-bell-special-prize-covid-research-2022">award</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1016/j.tibs.2022.11.001">Novel machine learning approaches revolutionize protein knowledge</a>
+      <p class="authors">Nicola Bordin, <strong>Christian Dallago</strong>, Michael Heinzinger, Stephanie Kim, Maria Littmann, Clemens Rauer, Martin Steinegger, Burkhard Rost, Christine Orengo</p>
+      <p class="venue">Trends in Biochemical Sciences 48(4):345–359, 2023 &middot; review</p>
+      <ul class="links"><li><a href="https://doi.org/10.1016/j.tibs.2022.11.001">journal</a></li></ul>
+    </li>
+
+    <li data-theme="eval">
+      <a class="title" href="https://doi.org/10.1038/s41557-023-01218-w">Illuminating enzyme design using deep learning</a>
+      <p class="authors"><strong>Christian Dallago</strong>, Kevin K. Yang</p>
+      <p class="venue">Nature Chemistry 15:749–750, 2023 &middot; News &amp; Views</p>
+      <ul class="links"><li><a href="https://doi.org/10.1038/s41557-023-01218-w">journal</a></li></ul>
+    </li>
+
+    <li data-theme="gen">
+      <a class="title" href="https://doi.org/10.1016/j.csbj.2022.11.014">From sequence to function through structure: Deep learning for protein design</a>
+      <p class="authors">Noelia Ferruz, Michael Heinzinger, Mehmet Akdel, Alexander Goncearenco, Luca Naef, <strong>Christian Dallago</strong></p>
+      <p class="venue">Computational and Structural Biotechnology Journal 21:238–250, 2023 &middot; senior author</p>
+      <ul class="links"><li><a href="https://doi.org/10.1016/j.csbj.2022.11.014">journal</a></li></ul>
+    </li>
+
+  </ul>
+
+  <h2>2022</h2>
+  <ul class="pubs">
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1109/TPAMI.2021.3095381">ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning</a>
+      <p class="authors">Ahmed Elnaggar, Michael Heinzinger, <strong>Christian Dallago</strong>, Ghalia Rehawi, Yu Wang, Llion Jones, Tom Gibbs, Tamas Feher, Christoph Angerer, Martin Steinegger, Debsindhu Bhowmik, Burkhard Rost</p>
+      <p class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence 44(10):7112–7127, 2022</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1109/TPAMI.2021.3095381">journal</a></li>
+        <li><a href="https://github.com/agemagician/ProtTrans">code</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://arxiv.org/abs/2110.04126">3D Infomax improves GNNs for molecular property prediction</a>
+      <p class="authors">Hannes Stärk, Dominique Beaini, Gabriele Corso, Prudencio Tossou, <strong>Christian Dallago</strong>, Stephan Günnemann, Pietro Liò</p>
+      <p class="venue">ICML 2022, PMLR 162:20479–20502</p>
+      <ul class="links"><li><a href="https://arxiv.org/abs/2110.04126">preprint</a></li></ul>
+    </li>
+
+    <li data-theme="scale">
+      <a class="title" href="https://doi.org/10.1093/nar/gkab1026">ProteomicsDB: toward a FAIR open-source resource for life-science research</a>
+      <p class="authors">Ludwig Lautenbacher, Patroklos Samaras, Julian Muller, Andreas Grafberger, Marwin Shraideh, Johannes Rank, Simon T. Fuchs, Tobias K. Schmidt, Matthew The, <strong>Christian Dallago</strong>, Holger Wittges, Burkhard Rost, Helmut Krcmar, Bernhard Kuster, Mathias Wilhelm</p>
+      <p class="venue">Nucleic Acids Research 50(D1):D1541–D1552, 2022</p>
+      <ul class="links"><li><a href="https://doi.org/10.1093/nar/gkab1026">journal</a></li></ul>
+    </li>
+
+  </ul>
+
+  <h2>2021</h2>
+  <ul class="pubs">
+
+    <li data-theme="eval">
+      <a class="title" href="https://openreview.net/forum?id=p2dMLEwL8tF">FLIP: Benchmark tasks in fitness landscape inference for proteins</a>
+      <p class="authors"><strong>Christian Dallago</strong>, Jody Mou, Kadina E. Johnston, Bruce Wittmann, Nick Bhattacharya, Samuel Goldman, Ali Madani, Kevin K. Yang</p>
+      <p class="venue">NeurIPS 2021 Datasets &amp; Benchmarks &middot; first author</p>
+      <ul class="links">
+        <li><a href="https://openreview.net/forum?id=p2dMLEwL8tF">paper</a></li>
+        <li><a href="https://github.com/J-SNACKKB/FLIP">code</a></li>
+        <li><a href="https://flip.protein.properties/">project</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1002/cpz1.113">Learned embeddings from deep learning to visualize and predict protein sets</a>
+      <p class="authors"><strong>Christian Dallago</strong>, Konstantin Schütze, Michael Heinzinger, Tobias Olenyi, Maria Littmann, Amy X. Lu, Kevin K. Yang, Seonwoo Min, Sungroh Yoon, James T. Morton, Burkhard Rost</p>
+      <p class="venue">Current Protocols 1(5):e113, 2021 &middot; first author</p>
+      <p class="gloss">bio_embeddings — the framework, still the lab's most-used open-source artifact.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1002/cpz1.113">journal</a></li>
+        <li><a href="https://github.com/sacdallago/bio_embeddings">code</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1093/nar/gkab354">PredictProtein — Predicting Protein Structure and Function for 29 Years</a>
+      <p class="authors">Michael Bernhofer, <strong>Christian Dallago</strong>, Tim Karl, Venkata Satagopam, Michael Heinzinger, Maria Littmann, Tobias Olenyi, Jiajun Qiu, Konstantin Schütze, Guy Yachdav, Haim Ashkenazy, Nir Ben-Tal, Yana Bromberg, Tatyana Goldberg, Laszlo Kajan, Sean O'Donoghue, Chris Sander, Andrea Schafferhans, Avner Schlessinger, Gerrit Vriend, Milot Mirdita, Piotr Gawron, Wei Gu, Yohan Jarosz, Christophe Trefois, Martin Steinegger, Reinhard Schneider, Burkhard Rost</p>
+      <p class="venue">Nucleic Acids Research 49(W1):W535–W540, 2021</p>
+      <ul class="links"><li><a href="https://doi.org/10.1093/nar/gkab354">journal</a></li></ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1093/bioadv/vbab035">Light attention predicts protein location from the language of life</a>
+      <p class="authors">Hannes Stärk, <strong>Christian Dallago</strong>, Michael Heinzinger, Burkhard Rost</p>
+      <p class="venue">Bioinformatics Advances 1(1):vbab035, 2021</p>
+      <ul class="links"><li><a href="https://doi.org/10.1093/bioadv/vbab035">journal</a></li></ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1007/s00439-021-02411-y">Embeddings from protein language models predict conservation and variant effects</a>
+      <p class="authors">Céline Marquet, Michael Heinzinger, Tobias Olenyi, <strong>Christian Dallago</strong>, Kyra Erckert, Michael Bernhofer, Dmitrii Nechaev, Burkhard Rost</p>
+      <p class="venue">Human Genetics 141(10):1629–1647, 2021</p>
+      <ul class="links"><li><a href="https://doi.org/10.1007/s00439-021-02411-y">journal</a></li></ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1038/s41598-021-03431-4">Protein embeddings and deep learning predict binding residues for various ligand classes</a>
+      <p class="authors">Maria Littmann, Michael Heinzinger, <strong>Christian Dallago</strong>, Konstantin Weissenow, Burkhard Rost</p>
+      <p class="venue">Scientific Reports 11:23916, 2021</p>
+      <ul class="links"><li><a href="https://doi.org/10.1038/s41598-021-03431-4">journal</a></li></ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1038/s41598-020-80786-0">Embeddings from deep learning transfer GO annotations beyond homology</a>
+      <p class="authors">Maria Littmann, Michael Heinzinger, <strong>Christian Dallago</strong>, Tobias Olenyi, Burkhard Rost</p>
+      <p class="venue">Scientific Reports 11:1160, 2021</p>
+      <ul class="links"><li><a href="https://doi.org/10.1038/s41598-020-80786-0">journal</a></li></ul>
+    </li>
+
+  </ul>
+
+  <h2>2019–2020</h2>
+  <ul class="pubs">
+
+    <li data-theme="scale">
+      <a class="title" href="https://doi.org/10.1093/nar/gkz946">Pathway Commons 2019 Update: integration, analysis and exploration of pathway data</a>
+      <p class="authors">Igor Rodchenkov, Ozgun Babur, Augustin Luna, Bulent Arman Aksoy, Jeffrey V. Wong, Dylan Fong, Max Franz, Metin Can Siper, Manfred Cheung, Michael Wrana, Harsh Mistry, Logan Mosier, Jonah Dlin, Qizhi Wen, Caitlin O'Callaghan, Wanxin Li, Geoffrey Elder, Peter T. Smith, <strong>Christian Dallago</strong>, Ethan Cerami, Benjamin Gross, Ugur Dogrusoz, Emek Demir, Gary D. Bader, Chris Sander</p>
+      <p class="venue">Nucleic Acids Research 48(D1):D489–D497, 2020</p>
+      <ul class="links"><li><a href="https://doi.org/10.1093/nar/gkz946">journal</a></li></ul>
+    </li>
+
+    <li data-theme="repr">
+      <a class="title" href="https://doi.org/10.1186/s12859-019-3220-8">Modeling aspects of the language of life through transfer-learning protein sequences</a>
+      <p class="authors">Michael Heinzinger, Ahmed Elnaggar, Yu Wang, <strong>Christian Dallago</strong>, Dmitrii Nechaev, Florian Matthes, Burkhard Rost</p>
+      <p class="venue">BMC Bioinformatics 20:723, 2019</p>
+      <p class="gloss">SeqVec — one of the first large-scale protein language models.</p>
+      <ul class="links">
+        <li><a href="https://doi.org/10.1186/s12859-019-3220-8">journal</a></li>
+        <li><a href="https://github.com/Rostlab/SeqVec">code</a></li>
+      </ul>
+    </li>
+
+    <li data-theme="scale">
+      <a class="title" href="https://doi.org/10.1093/bioinformatics/bty862">The EVcouplings Python framework for coevolutionary sequence analysis</a>
+      <p class="authors">Thomas A. Hopf, Anna G. Green, Benjamin Schubert, Sophia Mersmann, Charlotta P. I. Schärfe, John B. Ingraham, Agnes Toth-Petroczy, Kelly Brock, Adam J. Riesselman, Perry Palmedo, Chan Kang, Robert Sheridan, Eli J. Draizen, <strong>Christian Dallago</strong>, Chris Sander, Debora S. Marks</p>
+      <p class="venue">Bioinformatics 35(9):1582–1584, 2019</p>
+      <ul class="links"><li><a href="https://doi.org/10.1093/bioinformatics/bty862">journal</a></li></ul>
+    </li>
+
+  </ul>
+
+  <hr class="rule">
+
+  <p class="note">Earlier work, and anything not listed here, is on <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a>.</p>
+
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p><a href="/team/">Team</a> &middot; <a href="/join/">Join</a> &middot; <a href="/data/">Data for talks</a> &middot; <a href="https://bsky.app/profile/machine.learning.bio">Bluesky</a> &middot; <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a> &middot; <a href="https://github.com/sacdallago">GitHub</a></p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+<script src="/filter.js" defer></script>
+</body>
+</html>
