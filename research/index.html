@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — machine.learning.bio</title>
+<meta name="description" content="Five research themes: representation learning for biology, generative and programmable design, agentic design workflows, search and structure at scale, and benchmarks and evaluation.">
+<link rel="canonical" href="https://machine.learning.bio/research/">
+<link rel="preload" href="/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machine.learning.bio/research/">
+<meta property="og:title" content="Research — machine.learning.bio">
+<meta property="og:description" content="Representation learning, generative design, agentic workflows, proteome-scale search, and evaluation.">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/" aria-current="page">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <h1>Research</h1>
+
+  <p class="lead">We study what machine-learned representations capture about biology, where they break down, and how to build reliable computational methods to analyze, evaluate, and design biological molecules.</p>
+
+  <hr class="rule">
+
+  <section id="representation-learning" aria-labelledby="h-repr">
+    <p class="label">Theme 01</p>
+    <h2 id="h-repr">Representation learning for biology</h2>
+    <p class="lead">Self-supervised models for protein and nucleotide sequences.</p>
+
+    <p>In <strong>SeqVec</strong> and <strong>ProtTrans</strong>, we trained self-supervised language models on large protein sequence databases without structural or evolutionary labels. Representations from ProtT5 matched or exceeded alignment-based predictors on secondary structure, subcellular localization, and per-residue conservation tasks at much lower inference cost, and we packaged embedding extraction and downstream prediction workflows in <strong>bio_embeddings</strong>.</p>
+
+    <p>In <strong>Nucleotide Transformer</strong>, we trained foundation models across human and multispecies genomes to predict regulatory elements, splice sites, and variant effects directly from DNA sequence. Related genome-scale language modeling in <strong>GenSLMs</strong> tracked the evolutionary dynamics of SARS-CoV-2.</p>
+
+    <p>We also integrated protein language model predictors into <strong>PredictProtein</strong>, adding alignment-free single-sequence structure and function annotations to a web server operating since 1992.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.1109/TPAMI.2021.3095381">ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning</a> <span class="tag">IEEE TPAMI 2022</span></li>
+      <li><a href="https://doi.org/10.1186/s12859-019-3220-8">Modeling aspects of the language of life through transfer-learning protein sequences</a> (SeqVec) <span class="tag">BMC Bioinformatics 2019</span></li>
+      <li><a href="https://doi.org/10.1038/s41592-024-02523-z">Nucleotide Transformer: building and evaluating robust foundation models for human genomics</a> <span class="tag">Nature Methods 2025</span></li>
+      <li><a href="https://doi.org/10.1002/cpz1.113">Learned embeddings from deep learning to visualize and predict protein sets</a> (bio_embeddings) <span class="tag">Current Protocols 2021</span></li>
+      <li><a href="https://doi.org/10.1093/bioadv/vbab035">Light attention predicts protein location from the language of life</a> <span class="tag">Bioinformatics Advances 2021</span></li>
+      <li><a href="https://doi.org/10.1093/nar/gkab354">PredictProtein — Predicting Protein Structure and Function for 29 Years</a> <span class="tag">Nucleic Acids Research 2021</span></li>
+      <li><a href="https://doi.org/10.1177/10943420231201154">GenSLMs: Genome-scale language models reveal SARS-CoV-2 evolutionary dynamics</a> <span class="tag">IJHPCA 2023</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="generative-design" aria-labelledby="h-gen">
+    <p class="label">Theme 02</p>
+    <h2 id="h-gen">Generative and programmable design</h2>
+    <p class="lead">Atomistic generative models for proteins, binders, and multi-component biomolecules.</p>
+
+    <p>We develop generative models for de novo protein and biomolecular design, focusing on atomistic latent representations, synthetic pretraining data, and inference-time search.</p>
+
+    <p>Across a sequence of models, we extended flow-based structure generation from protein backbones to full-atom complexes. <strong>Proteina</strong> scales transformer flow matching with hierarchical fold-class conditioning to generate designable backbones up to 800 residues. <strong>La-Proteina</strong> moves to full-atom generation through partially latent flow matching, modeling backbone coordinates explicitly while encoding sequence and variable-length side-chain geometry in per-residue latents. <strong>Proteina-Complexa</strong> conditions atomistic generation on target structures, pretraining on <strong>Teddymer</strong>, a synthetic dataset of domain–domain interaction pairs extracted from predicted monomer structures, and applying inference-time search across protein and small-molecule targets.</p>
+
+    <p>With collaborators at the Institute for Protein Design and partner institutions, <strong>RFD4-Proteina</strong> expands this latent-space approach to standard and modified amino acids, glycans, DNA, and RNA under force-field supervision. The model combines intrinsic recurrent refinement in latent space with extrinsic search guided by geometric or energetic constraints. Experimental campaigns validated designs across therapeutic target binders, phosphorylation recognition, glycosylation control, and de novo enzymes catalyzing bond-breaking and bond-forming reactions, including an enzyme for active pharmaceutical ingredient synthesis.</p>
+
+    <p>Additional experimental design collaborations at Duke and partner laboratories are ongoing.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.64898/2026.11.12.766037">Biomolecular design through latent reasoning with RFD4-Proteina</a> <span class="tag">Preprint 2026</span></li>
+      <li><a href="https://arxiv.org/abs/2603.27950">Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute</a> (Proteina-Complexa) <span class="tag">ICLR 2026 Oral</span></li>
+      <li><a href="https://arxiv.org/abs/2507.09466">La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching</a> <span class="tag">Preprint 2025</span></li>
+      <li><a href="https://arxiv.org/abs/2503.00710">Proteina: Scaling Flow-based Protein Structure Generative Models</a> <span class="tag">ICLR 2025 Oral</span></li>
+      <li><a href="https://arxiv.org/abs/2512.01976">Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design</a> <span class="tag">Preprint 2025</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="agentic-design" aria-labelledby="h-agentic">
+    <p class="label">Theme 03</p>
+    <h2 id="h-agentic">Agentic design workflows</h2>
+    <p class="lead">Connecting biological mechanisms to computational assays and iterative binder design.</p>
+
+    <p>Generative models produce candidate structures and sequences, which is one step toward achieving a specific biological effect. Designing a competitive inhibitor, a multi-partner recruiter, or a conformation-selective binder also requires selecting constructs and target sites, choosing controls, and testing whether candidates satisfy the intended mechanism rather than interface confidence alone.</p>
+
+    <p>In <strong>BindClaw</strong>, we built an agent-assisted workflow that starts from a biological prompt or published paper, identifies relevant target structures and candidate binding sites, and constructs an executable, mechanism-specific computational assay. Operating against fixed assessment criteria and a defined compute budget, agents coordinate multiple design backends, including Proteina-Complexa and RFD4-Proteina, and revise binding sites, generator settings, or candidate sequences in response to computational results.</p>
+
+    <p>Across nine targets and 6,480 structural evaluations, BindClaw benchmarks showed that binding-site preferences vary substantially across generators. In a designer-assisted experimental campaign targeting calmodulin, 15 of 18 tested designs bound calcium-loaded calmodulin by biolayer interferometry, including three subnanomolar and nine single-digit nanomolar binders; 13 of those 15 showed no detectable binding under calcium-depleted conditions.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/assets/bindclaw-paper.pdf">Adapting biological mechanisms for agentic protein design</a> (BindClaw) <span class="tag">Preprint 2026</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="search-and-scale" aria-labelledby="h-scale">
+    <p class="label">Theme 04</p>
+    <h2 id="h-scale">Search and structure at scale</h2>
+    <p class="lead">GPU-accelerated homology search and proteome-wide quaternary structure prediction.</p>
+
+    <p>Homology search is a major computational step in sequence annotation and structure prediction pipelines. With collaborators, we redesigned gapless prefiltering and gapped profile alignment in <strong>MMseqs2</strong> for modern GPU architectures, reaching speeds up to 100 trillion cell updates per second while supporting consumer and low-wattage GPUs.</p>
+
+    <p>Fast search makes proteome-wide complex prediction practical. Across 4,777 proteomes spanning model organisms and species relevant to global health, we predicted 31 million candidate homo- and heterodimeric complexes and calibrated confidence criteria against experimentally determined structures, yielding 1.81 million high-confidence predictions in the AlphaFold Database. Within that release, the top 1% of structural clusters account for roughly 44% of all complexes, 8.3% of clusters span multiple domains of life, and 31.3% of high-confidence predictions extend beyond detectable PDB coverage.</p>
+
+    <p>In a focused campaign for pandemic preparedness, we predicted monomer and dimer structures across 2,812 viral proteomes from 23 viral families relevant to human health. The campaign produced 5,279 high-confidence heterodimers and 2,749 homodimers consolidated into 1,598 structural interface clusters, of which 471 (29.5%) had no detectable similarity to experimentally determined interfaces in the PDB. Analysis of these assemblies provided structural data on vaccinology-relevant glycoproteins and cleavage-site specificity in viral proteases, released through the AlphaFold Database Pandemic Preparedness Portal.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.64898/2026.09.29.755321">Systematic exploration of predicted quaternary structures within pandemic-relevant viral proteomes</a> <span class="tag">Preprint 2026</span></li>
+      <li><a href="https://doi.org/10.64898/2026.03.27.714458">AlphaFold Database expands to proteome-scale quaternary structures</a> <span class="tag">Preprint 2026</span></li>
+      <li><a href="https://doi.org/10.1038/s41592-025-02819-8">GPU-accelerated homology search with MMseqs2</a> <span class="tag">Nature Methods 2025</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="evaluation" aria-labelledby="h-eval">
+    <p class="label">Theme 05</p>
+    <h2 id="h-eval">Benchmarks and evaluation</h2>
+    <p class="lead">Testing whether predictive models generalize under realistic experimental splits.</p>
+
+    <p>We build benchmarks that evaluate protein fitness predictors under the distribution shifts encountered in protein-engineering campaigns, such as mutational-depth extrapolation and low-homology splits, alongside standard partitions.</p>
+
+    <p><strong>FLIP</strong> established standardized tasks for thermostability, binding, and viral capsid viability. <strong>FLIP2</strong> adds seven curated datasets covering enzymes, protein–protein interactions, and light-sensitive proteins, with documented provenance for each dataset and redistribution under CC-BY 4.0.</p>
+
+    <p>Across the FLIP2 datasets and splits, regularized baselines and shallow models frequently matched or outperformed fine-tuned protein language models, delineating practical limits of current transfer-learning strategies for fitness prediction.</p>
+
+    <p class="label mt">Work in this theme</p>
+    <ul class="plain">
+      <li><a href="https://doi.org/10.64898/2026.02.23.707496">FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications</a> <span class="tag">ICML 2026 Oral</span></li>
+      <li><a href="https://openreview.net/forum?id=p2dMLEwL8tF">FLIP: Benchmark tasks in fitness landscape inference for proteins</a> <span class="tag">NeurIPS 2021 D&amp;B</span></li>
+      <li><a href="https://doi.org/10.1038/s41557-023-01218-w">Illuminating enzyme design using deep learning</a> <span class="tag">Nature Chemistry 2023</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="software" aria-labelledby="h-software">
+    <h2 id="h-software">Software and data</h2>
+    <p>Open-source software, model weights, and public datasets from our work. GitHub star counts were checked in November 2026.</p>
+    <ul class="plain">
+      <li><a href="https://github.com/soedinglab/MMseqs2">MMseqs2</a> — sequence and structure search, including the GPU backend. 2,171 stars. <a href="https://mmseqs.com">mmseqs.com</a></li>
+      <li><a href="https://github.com/RosettaCommons/RFD4-Proteina">RFD4-Proteina</a> — generative biomolecular design across proteins, glycans, nucleic acids, and ligands. 615 stars. <a href="https://rfd4-proteina.org/">rfd4-proteina.org</a></li>
+      <li><a href="https://github.com/NVIDIA-BioNeMo/Proteina-Complexa">Proteina-Complexa</a> — 471 stars &middot; <a href="https://github.com/NVIDIA-BioNeMo/la-proteina">La-Proteina</a> — 317 stars &middot; <a href="https://github.com/NVIDIA-BioNeMo/proteina">Proteina</a> — 281 stars.</li>
+      <li><a href="https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/">BindClaw</a> — project page, benchmark results, and experimental binding data for agentic binder design.</li>
+      <li><a href="https://github.com/sacdallago/bio_embeddings">bio_embeddings</a> — protein language model embedding and visualization pipeline. 513 stars.</li>
+      <li><a href="https://github.com/J-SNACKKB/FLIP">FLIP</a> — protein fitness landscape benchmarks (FLIP and FLIP2). 145 stars. <a href="https://flip.protein.properties/">flip.protein.properties</a></li>
+      <li><a href="https://github.com/sacdallago/biotrainer">biotrainer</a> — standardized training and evaluation workflows for protein prediction models. 55 stars.</li>
+      <li><a href="https://github.com/agemagician/ProtTrans">ProtTrans</a> — 1,323 stars &middot; <a href="https://github.com/instadeepai/nucleotide-transformer">Nucleotide Transformer</a> — 943 stars &middot; <a href="https://github.com/Rostlab/SeqVec">SeqVec</a> — 122 stars.</li>
+      <li><a href="https://alphafold.ebi.ac.uk">AlphaFold Database</a> — high-confidence quaternary structure predictions, with bulk downloads on the <a href="https://ftp.ebi.ac.uk/pub/databases/alphafold/collaborations/nvda/">EMBL-EBI FTP</a> and viral assemblies in the <a href="https://alphafold.ebi.ac.uk/search/thematic-tag/pandemic-preparedness">Pandemic Preparedness Portal</a>.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p><a href="/team/">Team</a> &middot; <a href="/join/">Join</a> &middot; <a href="/data/">Data for talks</a> &middot; <a href="https://bsky.app/profile/machine.learning.bio">Bluesky</a> &middot; <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a> &middot; <a href="https://github.com/sacdallago">GitHub</a></p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+</body>
+</html>

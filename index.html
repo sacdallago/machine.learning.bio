@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>machine.learning.bio — the Dallago lab at Duke University</title>
+<meta name="description" content="The Dallago lab at Duke University builds machine learning methods for biological sequence representation, biomolecular design, agentic design workflows, proteome-scale search, and model evaluation.">
+<link rel="canonical" href="https://machine.learning.bio/">
+<link rel="preload" href="/fonts/instrumentserif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machine.learning.bio/">
+<meta property="og:title" content="machine.learning.bio — the Dallago lab at Duke University">
+<meta property="og:description" content="Machine learning for biological representation, biomolecular design, and proteome-scale discovery.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Christian Dallago",
+  "givenName": "Christian",
+  "familyName": "Dallago",
+  "jobTitle": "Visiting Assistant Professor",
+  "url": "https://machine.learning.bio/",
+  "email": "lab@learning.bio",
+  "affiliation": [
+    { "@type": "Organization", "name": "Duke University" },
+    { "@type": "Organization", "name": "NVIDIA" }
+  ],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Technical University of Munich" },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=4q0fNGAAAAAJ",
+    "https://github.com/sacdallago",
+    "https://bsky.app/profile/machine.learning.bio",
+    "https://linkedin.com/in/sacdallago",
+    "https://christian.dallago.us"
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="/">machine.learning.bio</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/team/">Team</a></li>
+      <li><a href="/join/">Join</a></li>
+      <li><a href="/news/">News</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <div class="hero">
+    <h1>We build machine learning to model, design, and search biology.</h1>
+    <p>The Dallago lab at Duke University.</p>
+  </div>
+
+  <section aria-labelledby="thesis">
+    <h2 id="thesis">What we do</h2>
+    <p class="lead">We study what machine-learned representations capture about biology, where they break down, and how to turn them into reliable tools for discovery and molecular engineering.</p>
+    <p>Our research covers self-supervised sequence and structure models, atomistic generative models and agentic workflows for biomolecular design, GPU-accelerated search and complex prediction across proteomes, and benchmarks evaluated under realistic experimental splits.</p>
+  </section>
+
+  <section aria-labelledby="themes">
+    <h2 id="themes">Research</h2>
+
+    <div class="entry">
+      <h3><a href="/research/#representation-learning">Representation learning for biology</a></h3>
+      <p class="gloss">Self-supervised models for protein and nucleotide sequences.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#generative-design">Generative and programmable design</a></h3>
+      <p class="gloss">Atomistic generative models for proteins, binders, and multi-component biomolecules.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#agentic-design">Agentic design workflows</a></h3>
+      <p class="gloss">Automated systems that translate biological mechanisms into computational assays and iterative design campaigns.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#search-and-scale">Search and structure at scale</a></h3>
+      <p class="gloss">GPU-accelerated homology search and quaternary structure prediction across cellular and viral proteomes.</p>
+    </div>
+
+    <div class="entry">
+      <h3><a href="/research/#evaluation">Benchmarks and evaluation</a></h3>
+      <p class="gloss">Datasets and splits that measure generalization in real protein-engineering campaigns.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="selected">
+    <h2 id="selected">Selected work</h2>
+
+    <div class="entry">
+      <p class="tag">Preprint 2026 &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.11.12.766037">Biomolecular design through latent reasoning with RFD4-Proteina</a></h3>
+      <p>A generative model operating in a shared chemical and conformational latent space across standard and modified amino acids, glycans, DNA, and RNA. It combines recurrent latent refinement with constraint-guided search, with experimental validation across therapeutic binders, post-translational modification recognition, glycosylation control, and de novo enzymes.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">Preprint 2026 &middot; NVIDIA</p>
+      <h3><a href="https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/">BindClaw: Adapting biological mechanisms for agentic protein design</a></h3>
+      <p>An agent-assisted workflow that converts a biological objective or paper into a mechanism-specific computational assay and coordinates iterative binder design across multiple generators. In wet-lab testing, 15 of 18 designs bound calcium-loaded calmodulin with subnanomolar to low-nanomolar BLI affinities, and 13 of the 15 showed no detectable binding under calcium-depleted conditions.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">Preprint 2026 &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.09.29.755321">Systematic exploration of predicted quaternary structures within pandemic-relevant viral proteomes</a></h3>
+      <p>Monomer and dimer predictions across 2,812 viral proteomes from 23 viral families relevant to human health. Structural clustering consolidated 8,028 high-confidence dimers into 1,598 interface clusters, 29.5% without detectable similarity to experimental interfaces in the PDB, informing glycoprotein vaccinology and viral protease specificity.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">Preprint 2026 &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.03.27.714458">AlphaFold Database expands to proteome-scale quaternary structures</a></h3>
+      <p>We predicted 31 million candidate protein complexes across 4,777 proteomes, calibrated confidence criteria against experimentally determined assemblies, and released 1.81 million high-confidence predictions through the AlphaFold Database, 31.3% of which extend beyond detectable PDB coverage.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">Nature Methods 2025 &middot; NVIDIA</p>
+      <h3><a href="https://doi.org/10.1038/s41592-025-02819-8">GPU-accelerated homology search with MMseqs2</a></h3>
+      <p>GPU-optimized gapless prefiltering and gapped profile alignment for protein sequence search, reaching roughly 100 trillion cell updates per second while maintaining high throughput on consumer and low-wattage GPUs.</p>
+    </div>
+
+    <div class="entry">
+      <p class="tag">ICML 2026 Oral &middot; NVIDIA + Duke</p>
+      <h3><a href="https://doi.org/10.64898/2026.02.23.707496">FLIP2</a></h3>
+      <p>Seven curated fitness datasets and splits covering enzymes, protein–protein interactions, and light-sensitive proteins under realistic distribution shifts, where simple regularized baselines frequently match or outperform fine-tuned protein language models.</p>
+    </div>
+
+    <p class="note mt"><a href="/publications/">All publications</a></p>
+  </section>
+
+  <section aria-labelledby="news">
+    <h2 id="news">News</h2>
+    <dl class="news">
+      <dt><time datetime="2026-11-18">18 November 2026</time></dt>
+      <dd>We open a <a href="/news/agenticbio/">Request for Proposals: Protein Design and Agentic Biology</a> for a one-year postdoctoral position at Duke University.</dd>
+
+      <dt><time datetime="2026-11-15">15 November 2026</time></dt>
+      <dd><a href="https://doi.org/10.64898/2026.11.12.766037">RFD4-Proteina</a> is posted on bioRxiv, with <a href="https://github.com/RosettaCommons/RFD4-Proteina">code</a> and <a href="https://rfd4-proteina.org/">project page</a>.</dd>
+
+      <dt><time datetime="2026-10-28">28 October 2026</time></dt>
+      <dd><a href="https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/assets/bindclaw-paper.pdf">BindClaw</a> is released, with benchmark and experimental binding data on the <a href="https://research.nvidia.com/labs/dbr/assets/pages/bindclaw/">project page</a>.</dd>
+
+      <dt><time datetime="2026-10-01">1 October 2026</time></dt>
+      <dd><a href="https://doi.org/10.64898/2026.09.29.755321">Predicted quaternary structures across 2,812 pandemic-relevant viral proteomes</a> are posted on bioRxiv and released in the AlphaFold Database <a href="https://alphafold.ebi.ac.uk/search/thematic-tag/pandemic-preparedness">Pandemic Preparedness Portal</a>.</dd>
+    </dl>
+    <p class="note mt"><a href="/news/">News archive</a></p>
+  </section>
+
+  <section aria-labelledby="dualdoor">
+    <h2 id="dualdoor">Two roles, two doors</h2>
+    <p>Chris is a Senior Research Scientist and Applied Research Team Lead in Digital Biology at <strong>NVIDIA</strong>, and a Visiting Assistant Professor at <strong>Duke University</strong>, where he leads this lab. Work listed on this site spans both roles, and publications are tagged with the affiliation under which they were carried out.</p>
+    <p><strong>The Duke lab is independent of NVIDIA.</strong> Joining the Duke group does not imply employment at, or access to the resources of, NVIDIA. For NVIDIA roles, see the <a href="https://www.nvidia.com/en-us/about-nvidia/careers/">NVIDIA careers page</a>; for the Duke lab, see <a href="/join/">Join</a>.</p>
+  </section>
+
+  <section aria-labelledby="join">
+    <h2 id="join">Join us</h2>
+    <p>We supervise students at Duke and collaborate with researchers elsewhere through jointly supervised theses and postdoctoral fellowships. Eligibility requirements and application instructions are on the <a href="/join/">Join</a> page.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>The Dallago lab &middot; Department of Biostatistics &amp; Bioinformatics and Department of Cell Biology, Duke University.</p>
+  <p><a href="/team/">Team</a> &middot; <a href="/join/">Join</a> &middot; <a href="/data/">Data for talks</a> &middot; <a href="https://bsky.app/profile/machine.learning.bio">Bluesky</a> &middot; <a href="https://scholar.google.com/citations?user=4q0fNGAAAAAJ">Google Scholar</a> &middot; <a href="https://github.com/sacdallago">GitHub</a></p>
+  <p>Write to <strong>lab</strong> at <strong>learning.bio</strong>.</p>
+</footer>
+
+</body>
+</html>
